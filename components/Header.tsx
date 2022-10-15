@@ -1,7 +1,11 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-type Props = {};
+import Link from "next/link";
+import { PageInfo } from "../typings";
+type Props = {
+  pageInfo: PageInfo
+};
 
 export default function Header({}: Props) {
   return (
@@ -23,11 +27,16 @@ export default function Header({}: Props) {
         className="Flex flex-row items-center"
       >
         {/* Social Icons*/}
+        {Social.map((Social: {
+          url: string | undefined; _id: React.Key | null | undefined; 
+}) => (
         <SocialIcon
-          url="https://www.youtube.com/channel/UCBbZk9EcIFWGn27jTBKm4xA"
+        
+          url={Social.url}
           fgColor="gray"
           bgColor="transparent"
         />
+        ))}
 
         <SocialIcon
           url="https://www.youtube.com/channel/UCBbZk9EcIFWGn27jTBKm4xA"
@@ -41,6 +50,7 @@ export default function Header({}: Props) {
           bgColor="transparent"
         />
       </motion.div>
+      
       <motion.div
         initial={{
           x: -500,

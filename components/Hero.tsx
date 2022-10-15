@@ -1,13 +1,16 @@
 import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
+import { PageInfo } from "../typings";
 import BackgroundCircles from "./BackgroundCircles";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
 export default function Hero({}: Props) {
   const { text, count } = useTypewriter({
-    words: ["Bienvenue !", "Jean-Marc Guillaume", "msfvenom"],
+    words: ["Bienvenue !", "Jean-Marc Guillaume", "@DevMvco"],
     loop: true,
     delaySpeed: 2000,
   });
@@ -37,10 +40,10 @@ export default function Hero({}: Props) {
           <Link href="#experience">
             <button className="heroButton"> Experience</button>
           </Link>
-          <Link href="Compétences">
+          <Link href="#Compétences">
             <button className="heroButton">Compétences</button>
           </Link>
-          <Link href="Projets">
+          <Link href="#Projects">
             <button className="heroButton">Projets</button>
           </Link>
         </div>

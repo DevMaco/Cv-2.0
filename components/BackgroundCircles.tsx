@@ -17,7 +17,7 @@ function BackgroundCircles({}: Props) {
       transition={{
         duration: 2.5,
       }}
-      className="relative flex justify-center items-center"
+      className="relative flex justify-center items-center justify-self-auto"
     >
       <div
         className="absolute  border  border-[#333333] rounded-full h-[200px] w-[200px] mt52 
